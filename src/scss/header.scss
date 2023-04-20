@@ -1,0 +1,44 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	&__container {
+		display: flex;
+		@include adaptiveValue("min-height", 153, 65);
+		@include adaptiveValue("gap", 131, 15);
+		align-items: center;
+		padding-top: rem(10);
+		padding-bottom: rem(10);
+	}
+	&__logo {
+		@media (max-width:$mobileSmall){
+			 width: 28px;
+			 flex: 0 0 28px;
+			 overflow: hidden;
+		}
+	}
+}
+
+.menu {
+	padding: rem(5) rem(15) rem(5) 0;
+	background-color: rgb(255, 255, 255, .8);
+	border-radius: 5px;
+	&__list {
+		display: flex;
+		@include adaptiveValue("column-gap", 56, 20);
+		row-gap: rem(10);
+		flex-wrap: wrap;
+	}
+	&__link {
+		font-size: rem(16);
+		font-weight: 500;
+		line-height: math.div(24, 16);
+		color: rgba(18, 18, 18, 0.4);
+	}
+	@media (max-width:$mobileSmall){
+		 padding-right: 0; 
+	}
+}
+

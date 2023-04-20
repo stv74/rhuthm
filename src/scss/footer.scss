@@ -1,0 +1,112 @@
+.footer {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 45, 20);
+  background-color: #eeeeee;
+  &__body {
+    @include adaptiveValue("margin-bottom", 80, 30);
+  }
+  &__copy {
+    line-height: 1.6; 
+    color: rgba(18, 18, 18, 0.6);
+    text-align: center;
+  }
+}
+
+.body-footer {
+  display: flex;
+  gap: rem(50);
+  &__column {    
+    &_full {
+      flex: 1 1 auto;
+      @media (max-width:$tablet){
+        flex: 0 1 50%;
+      }
+    }
+    @media (max-width:$tablet){
+      &:first-child {
+        flex: 1 1 100%;
+      }
+    }
+  }
+  &__logo {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-bottom: rem(28);
+    }
+  }
+  @media (max-width:$tablet){
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.contacts-footer {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__link {
+    display: inline-block;
+    line-height: 1.6;
+    color: $secondColor;
+    padding-left: rem(44);
+    max-width: rem(300);
+    &_mail {
+      background: url(../Img/icon/mail.svg) left no-repeat;
+    }
+    &_location {
+      background: url(../Img/icon/location.svg) left no-repeat;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: center;
+  gap: rem(125);
+  @media (max-width:$tablet){
+    justify-content: space-between;
+    gap: rem(50);
+  }
+  &__title {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    text-transform: uppercase;
+    margin-bottom: rem(20);
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+  &__link {
+    display: inline-block;
+    line-height: math.div(24, 16);
+    color: rgba(18, 18, 18, 0.6);
+    &:hover {
+      text-decoration: underline;
+    }    
+  }
+}
+
+.social-footer {
+  &__title {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    text-transform: uppercase;
+    margin-bottom: rem(12);
+  }
+  &__item {
+    font-size: rem(25);
+    color: rgba(18, 18, 18, 0.6);
+    &:not(:last-child) {
+      margin-right: rem(32);
+    }
+  }
+}

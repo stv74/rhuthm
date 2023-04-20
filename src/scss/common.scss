@@ -1,0 +1,25 @@
+.title {
+  font-family: 'CalSans';
+  font-weight: 600;
+  @include adaptiveValue("font-size", 44, 36);
+  line-height: math.div(53, 44);
+  text-align: center;
+  span {
+    color: $decorColor;
+  }
+}
+
+.title_main {
+  @include adaptiveValue("font-size", 56, 44);
+  line-height: math.div(67, 56);
+  text-align: left;
+}
+
+.title_favorite {
+  @include adaptiveValue("font-size", 48, 36);
+  line-height: math.div(67, 48);
+  text-align: left;
+  @media (max-width:$tablet){
+    text-align: center;
+  }
+}
